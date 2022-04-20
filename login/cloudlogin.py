@@ -1,8 +1,23 @@
+import os
 import pyotp
 from locate import cloudlocate
 import cryptocode
 
-key = "enter password here" #输入加密密钥
+
+def verifyKey():
+    key = input("请输入加密key:")
+    verify = "iBHe9LUdJant*gtmg/ILedqqHV2Hdw8hT/w==*XJzPWtufq5D3DvuRb2ZL4g==*OtkTVIUAfyK+1OQEHLUO2Q=="
+    if cryptocode.decrypt(verify, key) == "verifyKey":
+        print("验证成功")
+    else:
+        print("验证失败")
+        os.system("pause")
+        exit()
+    return key
+
+
+key = verifyKey()
+
 
 cloudTotp = {
     "pre": "Yo+TgPLk8ynYuyxtsy0kCr5s1Zp80uYtgyhGWmaRi9A=*Ucsjb+B8B2avn8hTxkG9eA==*HnPBC2lWEdkZIH348wKHgg==*Cpv5B6VR3rNeaD7YlUiGmg==",
