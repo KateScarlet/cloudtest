@@ -5,14 +5,15 @@ from search import cloudsearch as search
 from jobs import cloudjobs as jobs
 
 iplist = [
-    "10.147.113.138"]
+]
+idlist = [
+]
 namelist = [
-    "公服区_业务中台_移动支付中心_生产环境_7"]
+]
 
 
 def mycode(page):
-    login.loginGfPrd(page)
+    login.loginPrd(page)
     locate.locateEcs(page)
-    # for ip, name in zip(iplist, namelist):
-    #     jobs.renameEcs(page, ip, name)
-    #     sleep(2)
+    for id, name in zip(idlist, namelist):
+        jobs.renameEcs(page, id, name, 1)
