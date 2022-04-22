@@ -1,7 +1,7 @@
 from search import cloudsearch as search
 
 
-def renameEcs(page, index, name: str, mod: int):  # 重命名ECS名称 ip:mod=0,id:mod=1
+def renameEcs(page, index, name: str, mod: int>=0):  # 重命名ECS名称 ip:mod=0,id:mod=1
     if mod == 0:
         searchResult = search.searchEcsByIp(page, index)
     if mod == 1:
