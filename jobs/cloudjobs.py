@@ -24,5 +24,5 @@ def countRdsCapacity(page, id: str):  # 获取RDS容量
         f"https://one.console.res.zj.hsip.gov.cn/?productName=rdsnext#/detail/{id}/basicInfo?region=cn-hangzhou-zjybhxq-d01")
     sleep(3)
     capacity = page.locator(
-        "xpath=/*/div[1]/div[2]/div[2]/div/div[4]/div/table/tbody/tr[1]/td[1]/span[2]/span[1]").inner_text()
+        "xpath=/html/body/div[4]/div/div/div[3]/div[2]/div[1]/div[2]/div[2]/div/div[4]/div/table/tbody/tr[1]/td[1]/span[2]/span[1]").inner_text()
     return capacity
