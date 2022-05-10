@@ -108,7 +108,7 @@ def loginGfPre(page):  # 公服预发
     page.goto(cloudUrl["gfpre"])
     page.locator("[placeholder=\"请输入用户名\"]").fill(cloudUser["gfpre"][0])
     page.locator("[placeholder=\"请输入密码\"]").fill(
-        cryptocode.decrypt(cloudUser["pgfpre"][1], key))
+        cryptocode.decrypt(cloudUser["gfpre"][1], key))
     with page.expect_navigation():
         page.locator("text=登 录").click()
     page.locator("input[name=\"totp\"]").fill(totpGfPre())
