@@ -7,18 +7,21 @@ from login import cloudlogin as login
 from search import cloudsearch as search
 
 iplist = [
+    
 ]
 idlist = [
+
 ]
 namelist = [
+
 ]
 
 
 def mycode(page):
     login.loginPrd(page)
     locate.locateEcs(page)
-    for id, name in zip(idlist, namelist):
-        jobs.renameEcs(page, id, name, 1)
+    for ip, name in zip(iplist, namelist):
+        jobs.renameEcs(page, ip, name, 0)
 
 
 def run(playwright: Playwright) -> None:
